@@ -73,6 +73,7 @@ export class RegisterComponent implements OnInit {
       {
       usersList.push(userLogin)
       console.log('User Register -->', usersList)
+      localStorage.setItem("usersList",JSON.stringify(usersList));
       this.router.navigate(['/principal/ships'])
       }else{
         error=>{

@@ -11,6 +11,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PrincipalModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]

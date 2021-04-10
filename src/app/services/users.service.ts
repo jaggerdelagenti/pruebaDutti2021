@@ -16,7 +16,31 @@ export class UserService {
 
   constructor( private _httpClient: HttpClient,
              ) { }
+  
+  login( username: string, password: string ) {
 
+    const data = { username, password };
+
+    return new Promise( resolve => {
+
+      this._httpClient.post(`${ URL }user/login`, data )
+        .subscribe( async resp => {
+          console.log(resp);
+
+          if ( resp['ok'] ) {
+            await this.saveToken( resp['token'] );
+            resolve(true);
+          } else {
+            this.token = null;
+            this.storage.clear();
+            resolve(false);
+          }
+
+        });
+
+    });
+
+  }
 
   register( user: IUser ) {
 
