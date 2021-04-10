@@ -18,10 +18,31 @@ export class Ship {
     public pilots: Array<any>;
     public starship_class: string;
     public url: string;
+    public statusmessage:string;
 
 
 
-    constructor( texto: string ) {
+    constructor( 
+     statusmessage: string,
+     id: number,
+     MGLT: number,
+     cargo_capacity:number,
+     consumables: string,
+     cost_in_credits: number,
+     created: Date,
+     crew: number,
+     hyperdrive_rating: number,
+     length: number,
+     manufacturer: string,
+     max_atmosphering_speed: string,
+     model: string,
+     name: string,
+     passengers: number,
+     films: Array<any>,
+     pilots: Array<any>,
+     starship_class: string,
+     url: string
+     ) {
 
     this.id= 0;
     this.MGLT= 0;
