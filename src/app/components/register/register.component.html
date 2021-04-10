@@ -88,8 +88,14 @@
                 <hr class="hr-line">
                 <div class="input-group-append form__required" *ngIf="registerForm.get('passwordConfirm').invalid ">
                     <span class="colorInvalid">
-                        <i>Confirm Password is required</i>
+                        <i>Confirm Password is required and must have more than 6 characters</i>
                     </span>
+                    
+                </div>
+                <div class="input-group-append form__required pt-3">
+                <span class="colorInvalid"  *ngIf="registerForm.get(['password']).value != registerForm.get(['passwordConfirm']).value && registerForm.get(['passwordConfirm']).value != null">
+                    <i>Password does not match</i>
+                </span>
                 </div>
         </div>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -46,18 +46,17 @@ export class RegisterComponent implements OnInit {
       username: [ '', [Validators.required, Validators.minLength(3)]],
       email: [ '', [Validators.required, Validators.minLength(6)]],
       password:['',[Validators.required, Validators.minLength(6)]],
-      passwordConfirm:['',Validators.required, Validators.minLength(6)]
-    }, { validator: this.checkPasswords }
+      passwordConfirm:['',[Validators.required, Validators.minLength(6),]]
+    }, { validator: this.passwordConfirming }
     )
   }
   
-
-  checkPasswords(group: FormGroup) { // here we have the 'passwords' group
-    const password = group.get('password').value;
-    const confirmPassword = group.get('confirmPassword').value;
-  
-    return password === confirmPassword ? null : { notSame: true }     
-  }
+  //aquí chequeo los passwords
+  passwordConfirming(c: AbstractControl): { invalid: boolean } {
+    if (c.get('password').value !== c.get('passwordConfirm').value) {
+        return {invalid: true};
+    }
+}
 
   registerUser() {
     // if (this.registerForm.invalid) { return }

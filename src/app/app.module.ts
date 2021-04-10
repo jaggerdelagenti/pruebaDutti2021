@@ -12,8 +12,6 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//Angular Material
-import { MatFormField } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -30,8 +28,6 @@ import { MatFormField } from '@angular/material/form-field';
     PrincipalModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatFormField
-
   ],
   providers: [],
   bootstrap: [AppComponent]
