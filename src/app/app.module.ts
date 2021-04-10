@@ -9,7 +9,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//Angular Material
+import { MatFormField } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { PrincipalComponent } from './components/principal/principal.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PrincipalModule
+    PrincipalModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormField
 
   ],
   providers: [],

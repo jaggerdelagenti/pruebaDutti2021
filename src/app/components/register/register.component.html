@@ -2,7 +2,7 @@
     <h2 class="text-center">Registrar</h2>
     <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
         <div class="form-group mt-5">
-            <!-- <label for="username">First name</label> -->
+            <label for="username">First name</label>
             <input 
                 type="text"
                 name="first_name"
@@ -17,7 +17,7 @@
                 </div>  
         </div>
         <div class="form-group mt-5" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-            <!-- <label for="username">Last name</label> -->
+            <label for="username">Last name</label>
             <input
                 type="text"
                 name="last_name"
@@ -32,7 +32,7 @@
                 </div>
         </div>
         <div class="form-group mt-5" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <!-- <label for="username">Username</label> -->
+            <label for="username">Username</label>
             <input
                 type="text"
                 name="username"
@@ -46,8 +46,8 @@
                     </span>
                 </div>
         </div>
-        <div class="form-group mt-5" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <!-- <label for="password">Password</label> -->
+        <div class="form-group mt-5" >
+            <label for="password">Password</label>
             <input
                 type="email"
                 name="email"
@@ -61,8 +61,40 @@
                     </span>
                 </div>
         </div>
+        <div class="form-group mt-5" >
+            <label for="password">Password</label>
+            <input
+                type="password"
+                name="password"
+                class="form-control"
+                placeholder="password"
+                formControlName="password" />
+                <hr class="hr-line">
+                <div class="input-group-append form__required" *ngIf="registerForm.get('password').invalid">
+                    <span class="colorInvalid">
+                        <i>Password is required</i>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group mt-5" >
+            <!-- <label for="password">Password</label> -->
+            <input
+                type="password"
+                name="passwordConfirm"
+                class="form-control"
+                placeholder="Password confirm"
+                formControlName="passwordConfirm" />
+                <hr class="hr-line">
+                <div class="input-group-append form__required" *ngIf="registerForm.get('passwordConfirm').invalid ">
+                    <span class="colorInvalid">
+                        <i>Confirm Password is required</i>
+                    </span>
+                </div>
+        </div>
+
         <div class="buttons">
-            <button type="submit" [disabled]="registerForm.invalid" class="btn buttons__login">Register</button>
+            <button type="submit"  class="btn buttons__login">Register</button>
             <img *ngIf="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
             <!-- <a routerLink="/" class="btn btn-link">Cancel</a> -->
             <button type="button" class="btn buttons__register" routerLink="/">Cancelar</button>
