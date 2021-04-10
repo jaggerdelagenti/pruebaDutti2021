@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   dataLoading: boolean = false;
   user:IUser;
+  usersList;
 
 
   constructor(
@@ -36,7 +37,8 @@ export class RegisterComponent implements OnInit {
       username:'',
       email:'',
       password:'',
-    }
+    },
+    this.usersList=[];
   }
 
   ngOnInit(): void {
@@ -59,18 +61,30 @@ export class RegisterComponent implements OnInit {
 }
 
   registerUser() {
-    // if (this.registerForm.invalid) { return }
-    this.user = Object.assign(this.user, this.registerForm.value)
+    if (this.registerForm.invalid) { return alert("invalid")}
+    
     // TODO : Falta integrar el servicio para registrar al usuario
-    console.log(this.user)
+    var userLogin = this.registerForm.value;
+    this.user = userLogin;
+    //servicio para registrar al usuario
     this._userService.register(this.user).then(res=>{
-      console.log(res)
+      //ya hice toda la verificación del token desde el lado cliente lo único que me queda saber es si es null la res
+      if(res)
+      {
+      usersList.push(userLogin)
+      console.log('User Register -->', usersList)
+      this.router.navigate(['/principal/ships'])
+      }else{
+        error=>{
+          console.log(<any>error)
+        }
+      }
+    },
+    error=>{
+      console.log(<any>error)
     })
 
-    // var userLogin = this.registerForm.value;
-    // usersList.push(userLogin)
-    // console.log('User Register -->', usersList)
-    // this.router.navigate(['/principal/ships'])
+    
 
   }
 

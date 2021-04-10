@@ -56,10 +56,9 @@ export class UserService {
       const headers = new HttpHeaders({
         'x-token': this.token
       });
-
-      this._httpClient.get(`${ URL }user/`, { headers })
+      
+      this._httpClient.get(`${ URL }user/user/`, { headers })
         .subscribe( resp => {
-
           if ( resp['ok'] ) {
             this.user = resp['user'];
             resolve(true);
@@ -67,7 +66,6 @@ export class UserService {
             //this.navCtrl.navigateRoot('/login');
             resolve(false);
           }
-
         });
 
 
@@ -78,7 +76,7 @@ export class UserService {
   async loadToken() {
 
    //this.token = await this.storage.get('token') || null;
-    this.token= localStorage.getItem('token')||null;
+    this.token= await localStorage.getItem('token')||null;
   }
 
   getUser() {
