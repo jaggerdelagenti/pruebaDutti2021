@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { loadships, loadShipsError, loadShipsSuccess } from '../actions';
+import { loadShips, loadShipsError, loadShipsSuccess } from '../actions';
 import { Ship } from '../../models/ship';
 
 export interface ShipsState {
@@ -9,16 +9,16 @@ export interface ShipsState {
     error  : any
 }
 
-export const ShipsInitialState: ShipsState = {
+export const shipsInitialState: ShipsState = {
     ships  : [],
     loaded : false,
     loading: false,
     error  : null
 }
 
-const _shipsReducer = createReducer(ShipsInitialState,
+const _shipsReducer = createReducer(shipsInitialState,
 
-    on( loadships, state => ({ ...state, loading: true })),
+    on( loadShips, state => ({ ...state, loading: true })),
     
     on( loadShipsSuccess, (state, { ships }) => ({ 
         ...state, 

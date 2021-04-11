@@ -2,17 +2,17 @@ import { createAction, props } from '@ngrx/store';
 import { Ship } from '../../models/ship';
 
 export const loadShip = createAction(
-    '[SHIP] load ship',
+    '[SHIP] Load Ship',
     props<{ id: string }>()
 );
 
 export const loadShipSuccess = createAction(
-    '[SHIP] load ship Success',
+    '[SHIP] Load Ship Success',
     props<{ ship: Ship }>()
 );
 
 export const loadShipError = createAction(
-    '[SHIP] load ship Error',
+    '[SHIP] Load Ship Error',
     props<{ payload: any }>()
 );
 

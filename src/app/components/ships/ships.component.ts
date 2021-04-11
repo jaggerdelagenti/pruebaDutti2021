@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ShipsService } from 'src/app/services/ships.service';
+import { ShipService } from 'src/app/services/ships.service';
 import { Store } from '@ngrx/store';
 import { Ship } from '../../models/ship';
 import { AppState } from 'src/app/store/app.reducers';
 
-import { loadships } from '../../store/actions/ships.actions';
+import { loadShips } from '../../store/actions/ships.actions';
 
 @Component({
   selector: 'app-ships',
@@ -18,7 +18,7 @@ export class ShipsComponent implements OnInit {
   loading: boolean = false;
   error: any;
 
-  constructor( private shipsService: ShipsService,
+  constructor( private shipService: ShipService,
   private store:Store<AppState>) {}
 
   ngOnInit(): void {
@@ -28,29 +28,12 @@ export class ShipsComponent implements OnInit {
       this.error    = error;
     });
     
-    this.store.dispatch( loadships() );
-
-    
-    // this._store.subscribe( ({ ships, filter }) => {
-    //   console.log(ships);
-    //   this.dataList=ships;
-    //   this.filterActual = filter;
-    //   console.log('ALL SHIPS WITH REDUCER -->', this.dataList)
-    // });
-    // this.store.select('ships').subscribe( ({ ships, loading, error }) => {
-    //   this.ships = ships;
-    //   this.loading  = loading;
-    //   this.error    = error;
-    // });
-
-
-    // this.store.dispatch( loadShips() );
-
+    this.store.dispatch( loadShips() );
 
     // this.shipsService.getShips().subscribe((ships) => {
     //     this.dataList = ships;
     //     console.log('SHIPS -->', this.dataList.results)
-    //  })
+    // })
   }
 }
 
