@@ -24,4 +24,5 @@ export class ShipsService {
       map( data => { return data })
       );
   }
+  
 }

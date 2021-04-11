@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ShipsService } from 'src/app/services/ships.service';
 import { Store } from '@ngrx/store';
 import { Ship } from '../../models/ship';
-import { AppState } from '../../app.reducer';
-import { ValidFilters } from '../../filters/filter.actions';
+import { AppState } from 'src/app/store/app.reducers';
+
+import { loadships } from '../../store/actions/ships.actions';
 
 @Component({
   selector: 'app-ships',
@@ -13,23 +14,43 @@ import { ValidFilters } from '../../filters/filter.actions';
 export class ShipsComponent implements OnInit {
 
   public dataList: any = [];
-  filterActual: ValidFilters;
+  ships: Ship[] = [];
+  loading: boolean = false;
+  error: any;
 
   constructor( private shipsService: ShipsService,
-  private _store:Store<AppState>) {}
+  private store:Store<AppState>) {}
 
   ngOnInit(): void {
-
-    this._store.subscribe( ({ ships, filter }) => {
-      console.log(ships);
-      this.dataList.push(ships);
-      this.filterActual = filter;
-      console.log('ALL SHIPS WITH REDUCER -->', this.dataList.results)
+    this.store.select('ships').subscribe( ({ ships, loading, error }) => {
+      this.ships = ships;
+      this.loading  = loading;
+      this.error    = error;
     });
+    
+    this.store.dispatch( loadships() );
 
-    this.shipsService.getShips().subscribe((ships) => {
-       this.dataList = ships;
-       console.log('SHIPS -->', this.dataList.results)
-    })
+    
+    // this._store.subscribe( ({ ships, filter }) => {
+    //   console.log(ships);
+    //   this.dataList=ships;
+    //   this.filterActual = filter;
+    //   console.log('ALL SHIPS WITH REDUCER -->', this.dataList)
+    // });
+    // this.store.select('ships').subscribe( ({ ships, loading, error }) => {
+    //   this.ships = ships;
+    //   this.loading  = loading;
+    //   this.error    = error;
+    // });
+
+
+    // this.store.dispatch( loadShips() );
+
+
+    // this.shipsService.getShips().subscribe((ships) => {
+    //     this.dataList = ships;
+    //     console.log('SHIPS -->', this.dataList.results)
+    //  })
   }
 }
+

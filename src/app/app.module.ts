@@ -17,7 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { appReducers } from './app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { EffectsArray } from './store/effects/index';
+import { appReducers } from './store/app.reducers';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,13 @@ import { appReducers } from './app.reducer';
     PrincipalModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot( appReducers ),
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot(EffectsArray),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
