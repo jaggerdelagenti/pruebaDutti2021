@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators'
 })
 export class ShipsService {
 
-  url: string = 'https://swapi.dev/api/starships/'
+  url: string = 'https://swapi.py4e.com/api/starships/'
   headerDict = {
     'Authorization': 'none',
     'Access-Control-Allow-Origin': '*'

@@ -4,16 +4,17 @@ import { ActionReducerMap } from '@ngrx/store';
 import { Ship } from'../app/models/ship';
 
 import { shipReducer } from '../../src/app/components/ships/ship.reducer';
+import { ValidFilters } from './filters/filter.actions';
 
-// import { filtroReducer } from './filtro/filtro.reducer';
-// import { filtrosValidos } from './filtro/filtro.actions';
+import { filterReducer } from './filters/filter.reducer';
+
 
 export interface AppState {
     ships: Ship[],
-    // filtro: filtrosValidos
+    filter: ValidFilters
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
     ships: shipReducer,
-    // filtro: filtroReducer
+    filter: filterReducer
 }

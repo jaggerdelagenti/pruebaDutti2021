@@ -1,14 +1,12 @@
 import { createAction, props } from '@ngrx/store';
 
-export const limpiarTodos = createAction('[TODO] Limpiar TODOS');
 
-
-export const toggle = createAction(
-    '[TODO] Toggle Ship',
+export const listLocals = createAction(
+    '[SHIP] Local Ships',
     props<{ id: number }>()
 );
 
-export const toggleAll = createAction(
-    '[TODO] Toggle ShipAll',
+export const listAll = createAction(
+    '[SHIP] All Ships',
     props<{ completado: boolean }>()
 );
