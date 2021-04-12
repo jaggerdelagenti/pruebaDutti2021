@@ -3,11 +3,9 @@ import * as reducers from '../reducers';
 
 
 export interface AppState {
-   ships: reducers.ShipsState,
-   ship: reducers.shipState,
+   ships: reducers.ShipsState;
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
-   ships: reducers.shipsReducer,
-   ship: reducers.shipReducer
+   ships: reducers.shipsReducer
 }

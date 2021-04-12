@@ -25,7 +25,6 @@ export class ShipsComponent implements OnInit {
       this.ships = ships;
       this.error    = error;
       this.dataList=this.ships;
-      console.log(this.dataList)
     });
     
     this.store.dispatch( loadShips() );

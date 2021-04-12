@@ -8,7 +8,7 @@ import { UserGuard } from '../../src/app/guards/guard'
 const routes: Routes = [
   { path: '', component: LoginComponent,canLoad:[UserGuard]},
   { path: 'register', component: RegisterComponent },
-  { path: 'principal', loadChildren: () => import(`./components/principal/principal.module`).then(m => m.PrincipalModule) }
+  { path: 'principal', loadChildren: () => import(`./components/principal/principal.module`).then(m => m.PrincipalModule),canLoad:[UserGuard] }
   // { path: 'ships', loadChildren: () => import(`./components/ships/ships.module`).then(m => m.ShipsModule) }
 ];
 
