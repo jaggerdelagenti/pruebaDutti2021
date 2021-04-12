@@ -7,19 +7,19 @@
 
 # Tasks.
 
-1.  RE-Estructura el proyecto como mejor consideres. 
+<!-- 1.  RE-Estructura el proyecto como mejor consideres. 
     1.  Como mínimo se debe crear un modulo a parte para la autenticación y registro.
-    2.  Implementa Interficies  o clases  para los tipos de datos que consideres.
-2. Implementa un sistema de login/registro que persista los datos correctamente.
+    2.  Implementa Interficies  o clases  para los tipos de datos que consideres. -->
+<!-- 2. Implementa un sistema de login/registro que persista los datos correctamente.
    1. Puedes utilizar:
       1. LocalStorage, 
       2. Alguna api externa
-      3. Implementar servicio propio con Nodejs.
-3. Implementa el patron de diseño redux para la gestion del listado de naves.
-   1. No es necesario implementar redux para todo el aplicativo, solo para la gestión de naves.
+      3. Implementar servicio propio con Nodejs. -->
+<!-- 3. Implementa el patron de diseño redux para la gestion del listado de naves.
+   1. No es necesario implementar redux para todo el aplicativo, solo para la gestión de naves. -->
 4.  Implementa la carga de multiples "páginas" en el apartado de ships.
-    1.   Actualmente solo carga una página de la api.
-    2.   Revisar la API para saber como consumir el resto de páginas. https://swapi.dev/
+    <!-- 1.   Actualmente solo carga una página de la api. -->
+    <!-- 2.   Revisar la API para saber como consumir el resto de páginas. https://swapi.dev/ -->
 5.  Implementa test unitarios para el modulo de login/registro.
 6.  Añade imágenes a las CARDS de naves: Puedes usar esta api  'https://starwars-visualguide.com/assets/img/starships/' + ID_DE NAVE -->  https://starwars-visualguide.com/assets/img/starships/5.jpg
 7.  Suponiendo que esta página tiene un numero elevado de usuarios simultáneos, implementa las mejoras que consideres oportunas para evitar la saturación del servidor.

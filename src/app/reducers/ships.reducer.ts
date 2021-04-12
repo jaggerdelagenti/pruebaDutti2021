@@ -24,7 +24,7 @@ const _shipsReducer = createReducer(shipsInitialState,
         ...state, 
         loading: false,
         loaded: true,
-        ships: [ ...ships ] 
+        ships: ships 
     })),
 
     on( loadShipsError, (state, { payload }) => ({ 

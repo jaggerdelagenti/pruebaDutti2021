@@ -24,9 +24,8 @@ export class ShipService {
 
 
   getShips(): Observable<any>{
-         return this.http.get(this.url).pipe(
-            
-           map( data => { return [data] })
+         return this.http.get(this.url).pipe( 
+           map( data => { return data })
            );
   }
 

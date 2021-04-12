@@ -24,14 +24,18 @@ export class ShipsComponent implements OnInit {
     this.store.select('ships').subscribe( ({ ships, error }) => {
       this.ships = ships;
       this.error    = error;
+      this.dataList=this.ships;
+      console.log(this.dataList)
     });
     
     this.store.dispatch( loadShips() );
 
-    this.shipService.getShips().subscribe((ships) => {
-      this.dataList = ships[0].results;
-      console.log('SHIPS -->', this.dataList)
-    })
+    
+    
+    // this.shipService.getShips().subscribe((ships) => {
+    //   this.dataList = ships[0].results;
+    //   console.log('SHIPS -->', this.dataList)
+    // })
   }
 }
 
