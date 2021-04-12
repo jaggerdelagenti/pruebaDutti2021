@@ -20,7 +20,7 @@ export class ShipsEffects {
             mergeMap(
                 () => this.shipService.getShips()
                     .pipe(
-                        map( otroships => shipsActions.loadShipsSuccess({ ships: otroships }) ),
+                        map( ships => shipsActions.loadShipsSuccess({ ships: ships }) ),
                         catchError( err => of(shipsActions.loadShipsError({ payload: err })) )
                     )
             )

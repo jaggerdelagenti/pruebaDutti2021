@@ -21,6 +21,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { EffectsArray } from './store/effects/index';
 import { appReducers } from './store/app.reducers';
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +46,6 @@ import { appReducers } from './store/app.reducers';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,10 +30,15 @@ export class ShipsComponent implements OnInit {
     
     this.store.dispatch( loadShips() );
 
-    // this.shipsService.getShips().subscribe((ships) => {
-    //     this.dataList = ships;
-    //     console.log('SHIPS -->', this.dataList.results)
+    // this.shipService.getShips().subscribe((ships) => {
+    //      this.dataList = ships;
+    //      console.log('SHIPS -->', this.dataList.results)
     // })
+    // this.shipService.getShips()
+    //     .subscribe( ships => {
+    //       console.log(ships);
+    //       this.ships = ships;
+    //     });
   }
 }
 

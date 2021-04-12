@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { loadShips, loadShipsError, loadShipsSuccess } from '../actions';
-import { Ship } from '../../models/ship';
+import { loadShips, loadShipsError, loadShipsSuccess } from '../store/actions';
+import { Ship } from '../models/ship';
 
 export interface ShipsState {
     ships  : Ship[],

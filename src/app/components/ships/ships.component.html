@@ -1,6 +1,6 @@
-<div class="container">
+<!-- <div class="container">
         <ships-details [dataList]="dataList"></ships-details> 
-</div> 
+</div>  -->
 <div class="alert alert-info text-center" role="alert"
     *ngIf="loading">
   <h4 class="alert-heading">Cargando...</h4>
@@ -23,9 +23,9 @@
 <div class="card-columns"
       *ngIf="!loading">
   
-  <div class="card" *ngFor="let ship of ships">
+  <div class="card" *ngFor="let ship of ships"> -->
     <!-- <img class="card-img-top" [src]="ship.avatar"> -->
-    <div class="card-body">
+     <div class="card-body">
       <h5 class="card-title"> {{ ship.result.name}} {{ ship.result.model }} </h5>
       <p class="card-text">This is a longer card with supporting.</p>
       <p class="card-text">
