@@ -23,11 +23,11 @@ export class ShipService {
   constructor( private http: HttpClient ) { }
 
 
-  getShips():Observable<any> {
-    return this.http.get(`${ this.url }`)
-          .pipe(
-            map( data => {return data})
-          );
+  getShips(): Observable<any>{
+         return this.http.get(this.url).pipe(
+            
+           map( data => { return [data] })
+           );
   }
 
   getShipById( id: string ) {
