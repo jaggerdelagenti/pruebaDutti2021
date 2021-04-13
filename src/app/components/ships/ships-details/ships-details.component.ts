@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 
 
@@ -18,7 +20,9 @@ export class ShipsDetailsComponent implements OnInit {
   modelDetails: string = '';
   starship_class: string = '';
 
-  constructor() { 
+
+  constructor(private http:HttpClient,
+    ) { 
   }
   
   ngOnInit(): void {
@@ -27,13 +31,25 @@ export class ShipsDetailsComponent implements OnInit {
         currentPage: 1,
         totalItems: this.dataList.length
       };
+     
   }
 
-  getStarshipId(url) {
+   getStarshipId(url){ 
+    
     this.shipId = url.slice(0, -1)
     const urlImage = `${this.shipId}.jpg`
-    return urlImage !== "";
-  }
+    var filename = urlImage.split('/').pop()
+    var urlacortar = urlImage.split( '/' );
+    var protocol = urlacortar[0];
+    var host = urlacortar[2];
+    var urlcambiada = protocol + '//' + host;
+    urlcambiada='https://starwars-visualguide.com/assets/img/starships/'
+    this.shipId = urlcambiada+filename;
+    return this.shipId
+
+   }
+
+  
 
   pageChanged(event){
     this.config.currentPage = event;
