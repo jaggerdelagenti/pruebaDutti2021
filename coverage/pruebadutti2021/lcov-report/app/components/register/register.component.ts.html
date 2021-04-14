@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.59% </span>
+                <span class="strong">62.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/29</span>
+                <span class='fraction'>18/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.08% </span>
+                <span class="strong">57.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/26</span>
+                <span class='fraction'>15/26</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -171,29 +171,17 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,14 +193,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -263,17 +263,17 @@ import usersList from 'src/assets/json/users.json';
 export class RegisterComponent implements OnInit {
 &nbsp;
   registerForm: FormGroup;
-<span class="cstat-no" title="statement not covered" >  dataLoading: boolean = false;</span>
+  dataLoading: boolean = false;
   user:IUser;
   usersList;
 &nbsp;
 &nbsp;
-<span class="fstat-no" title="function not covered" >  constructor(</span>
-    private <span class="cstat-no" title="statement not covered" >fb: F</span>ormBuilder,
-    private <span class="cstat-no" title="statement not covered" >router: R</span>outer,
-    private <span class="cstat-no" title="statement not covered" >_userService:U</span>serService
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private _userService:UserService
   ) { 
-<span class="cstat-no" title="statement not covered" >    this.user = {</span>
+    this.user = {
       _id:0,
       first_name:'',
       last_name:'',
@@ -284,8 +284,8 @@ export class RegisterComponent implements OnInit {
     this.usersList=[];
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  ngOnInit(</span>): void {
-<span class="cstat-no" title="statement not covered" >    this.registerForm = this.fb.group({</span>
+  ngOnInit(): void {
+    this.registerForm = this.fb.group({
       first_name: [ '', [Validators.required, Validators.minLength(3)]],
       last_name: [ '', [Validators.required, Validators.minLength(3)]],
       username: [ '', [Validators.required, Validators.minLength(3)]],
@@ -297,14 +297,14 @@ export class RegisterComponent implements OnInit {
   }
   
   //aquí chequeo los passwords
-<span class="fstat-no" title="function not covered" >  passwordConfirming(</span>c: AbstractControl): { invalid: boolean } {
-<span class="cstat-no" title="statement not covered" >    if (c.get('password').value !== c.get('passwordConfirm').value) {</span>
-<span class="cstat-no" title="statement not covered" >        return {invalid: true};</span>
+  passwordConfirming(c: AbstractControl): { invalid: boolean } {
+    if (c.get('password').value !== c.get('passwordConfirm').value) {
+        return {invalid: true};
     }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  registerUser(</span>) {
-<span class="cstat-no" title="statement not covered" >    if (this.registerForm.invalid) { <span class="cstat-no" title="statement not covered" >return alert("invalid")}</span></span>
+  registerUser() {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.registerForm.invalid) { return alert("invalid")}
     
     // TODO : Falta integrar el servicio para registrar al usuario
     var userLogin = <span class="cstat-no" title="statement not covered" >this.registerForm.value;</span>
@@ -340,7 +340,7 @@ export class RegisterComponent implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 14 2021 00:11:56 GMT+0200 (hora de verano de Europa central)
+                at Wed Apr 14 2021 10:42:03 GMT+0200 (GMT+02:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
