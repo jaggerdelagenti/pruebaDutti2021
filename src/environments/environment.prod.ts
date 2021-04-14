@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiSignUpUrl:'http://localhost:3000/'
+  apiSignUpUrl:'https://pruebamassimo-server.herokuapp.com:3000/'
 };

@@ -22,8 +22,8 @@
     <!-- 2.   Revisar la API para saber como consumir el resto de páginas. https://swapi.dev/ -->
 5.  Implementa test unitarios para el modulo de login/registro.
 <!--6.  Añade imágenes a las CARDS de naves: Puedes usar esta api  'https://starwars-visualguide.com/assets/img/starships/' + ID_DE NAVE https://starwars-visualguide.com/assets/img/starships/5.jpg-->
-7.  Suponiendo que esta página tiene un numero elevado de usuarios simultáneos, implementa las mejoras que consideres oportunas para evitar la saturación del servidor.
-    1.  Si alguna de las medidas no es de código, comentalas a continuación en este Readme.
+<!-- 7.  Suponiendo que esta página tiene un numero elevado de usuarios simultáneos, implementa las mejoras que consideres oportunas para evitar la saturación del servidor.
+    1.  Si alguna de las medidas no es de código, comentalas a continuación en este Readme. -->
     
 
 # Getting Started 
@@ -34,5 +34,13 @@ Navigate to `http://localhost:4200/`.
 
 
 # Notas del desarrollador:
+Entiendo que para soportar un número de usuarios elevados también dependerá de que en el server en que este el deploy de nuestra aplicación tenga la escalabilidad suficiente como para soportar el tráfico de los visitantes, en mi experiencia he trabajado con muchas plataformas pero últimamente de las que mas utilizo son DigitalOcean con Docker o Kubernetes y también  tengo experiencia con AWS.
+
+
+# REPO DEL SERVIDOR NODE JS PARA LA SECCIÓN USER
+
+https://github.com/jaggerdelagenti/prueba-server
+Descargar el archivo y correr el comando <!-- nodemon dist/ --> 
+<!--(No me ha dado el tiempo de hacer el deploy) -->
 
 

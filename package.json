@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "jest",
     "coverage": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watchAll",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~11.0.9",
     "@angular/platform-browser-dynamic": "~11.0.9",
     "@angular/router": "~11.0.9",
+    "@briebug/jest-schematic": "^3.1.0",
     "@ngrx/effects": "^11.1.0",
     "@ngrx/entity": "^11.1.0",
     "@ngrx/router-store": "^11.1.0",
@@ -38,13 +39,12 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-builders/jest": "11.1.1",
     "@angular-devkit/build-angular": "~0.1100.7",
     "@angular/cli": "~11.0.7",
     "@angular/compiler-cli": "~11.0.9",
     "@angular/language-service": "~11.0.9",
     "@ngrx/schematics": "^11.1.0",
-    "@types/jasmine": "~3.6.0",
-    "@types/jasminewd2": "~2.0.3",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
