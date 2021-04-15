@@ -55,10 +55,15 @@ export class LoginComponent implements OnInit {
                   if(res2["idToken"] != ""){
                     localStorage.setItem("idToken", res2["idToken"]);
                     localStorage.setItem("email", res2["email"]);
+
                     let today = new Date();
+                    
                     today.setSeconds(res2["expiresIn"]);
+                    
                     localStorage.setItem("expiresIn", today.getTime().toString());
-                    this.router.navigateByUrl('principal/ships');
+                   
+                    this.router.navigateByUrl('/principal/ships');
+                    
                   }
                 })
 
