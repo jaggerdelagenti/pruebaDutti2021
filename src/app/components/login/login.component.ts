@@ -57,8 +57,9 @@ export class LoginComponent implements OnInit {
                     localStorage.setItem("email", res2["email"]);
 
                     let today = new Date();
-                    
-                    today.setSeconds(res2["expiresIn"]);
+                    console.log(today)
+                    today.setSeconds(30);
+                    console.log(today)
                     
                     localStorage.setItem("expiresIn", today.getTime().toString());
                    
@@ -67,27 +68,8 @@ export class LoginComponent implements OnInit {
                   }
                 })
 
-
     })
 
-    // console.log(this.user)
-    // this._userService.login(this.user.username,this.user.password).then(res=>
-    //   console.log(res)
-    // );
-    // // JSON simulando usuarios
-    // var userLogin = this.loginForm.value.username;
-    // console.log(this.loginForm.value.username);
-    // this.users=JSON.parse( localStorage.getItem("usersList") );
-    // console.log(this.users);
-    // var filterJson = this.users.filter(function (user) { 
-    //   console.log(user);
-    //   return user.first_name === userLogin  });
-    // if (filterJson.length > 0) {
-    //   this.router.navigate(['/principal/ships'])
-    // } else {
-    //   this.unregistered = true;
-    // }
-    // console.log(filterJson)
   }
 }
 
