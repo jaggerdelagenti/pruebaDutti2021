@@ -30,9 +30,9 @@ describe('LoginComponent', () => {
   });
 
   it('Should set submitted to true', async(() => {
-    component.loginUser();
-    expect(component.loginUser).toBeTruthy();
-  }));
+     component.loginUser();
+     expect(component.loginUser).toBeTruthy();
+   }));
 
  it('Should call the Login User method', () =>{ fakeAsync(() =>{
    fixture.detectChanges();
@@ -45,13 +45,13 @@ describe('LoginComponent', () => {
  });
 
   it('Form should be invalid', async(()=> {
-    component.loginForm.controls['username'].setValue('');
+    component.loginForm.controls['email'].setValue('');
     component.loginForm.controls['password'].setValue('');
     expect(component.loginForm.valid).toBeFalsy();
   }));
 
   it('Form should be valid', async(()=> {
-    component.loginForm.controls['username'].setValue('admin');
+    component.loginForm.controls['email'].setValue('admin');
     component.loginForm.controls['password'].setValue('admin123');
     expect(component.loginForm.valid).toBeTruthy();
   }));

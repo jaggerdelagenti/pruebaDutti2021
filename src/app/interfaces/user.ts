@@ -4,5 +4,7 @@ export interface IUser {
     last_name:string,
     username:string,
     email:string,
-    password:string
+    password:string,
+    passwordConfirm:string,
+    returnSecureToken:boolean
 }

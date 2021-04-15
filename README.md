@@ -37,10 +37,4 @@ Navigate to `http://localhost:4200/`.
 Entiendo que para soportar un número de usuarios elevados también dependerá de que en el server en que este el deploy de nuestra aplicación tenga la escalabilidad suficiente como para soportar el tráfico de los visitantes, en mi experiencia he trabajado con muchas plataformas pero últimamente de las que mas utilizo son DigitalOcean con Docker o Kubernetes y también  tengo experiencia con AWS.
 
 
-# REPO DEL SERVIDOR NODE JS PARA LA SECCIÓN USER
-
-https://github.com/jaggerdelagenti/prueba-server
-Descargar el archivo y correr el comando <!-- nodemon dist/ --> 
-<!--(No me ha dado el tiempo de hacer el deploy) -->
-
 

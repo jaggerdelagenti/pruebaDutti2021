@@ -1,5 +1,6 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, AbstractControl, FormControlName } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -37,6 +38,8 @@ export class RegisterComponent implements OnInit {
       username:'',
       email:'',
       password:'',
+      passwordConfirm:'',
+      returnSecureToken:null
     },
     this.usersList=[];
   }
@@ -47,8 +50,11 @@ export class RegisterComponent implements OnInit {
       last_name: [ '', [Validators.required, Validators.minLength(3)]],
       username: [ '', [Validators.required, Validators.minLength(3)]],
       email: [ '', [Validators.required, Validators.minLength(6)]],
+      returnSecureToken:[''],
       password:['',[Validators.required, Validators.minLength(6)]],
-      passwordConfirm:['',[Validators.required, Validators.minLength(6),]]
+      passwordConfirm:['',[Validators.required, Validators.minLength(6),],
+     
+    ]
     }, { validator: this.passwordConfirming }
     )
   }
@@ -61,32 +67,22 @@ export class RegisterComponent implements OnInit {
 }
 
   registerUser() {
-    if (this.registerForm.invalid) { return alert("invalid")}
-    
-    // TODO : Falta integrar el servicio para registrar al usuario
-    var userLogin = this.registerForm.value;
-    this.user = userLogin;
-    //servicio para registrar al usuario
-    this._userService.register(this.user).then(res=>{
-      //ya hice toda la verificación del token desde el lado cliente lo único que me queda saber es si es null la res
-      if(res)
-      {
-      usersList.push(userLogin)
-      console.log('User Register -->', usersList)
-      localStorage.setItem("usersList",JSON.stringify(usersList));
-      this.router.navigate(['/principal/ships'])
-      }else{
-        error=>{
-          console.log(<any>error)
-        }
-      }
-    },
-    error=>{
-      console.log(<any>error)
+    this.registerForm.patchValue({
+      returnSecureToken:true
     })
+    this.user = this.registerForm.value;
 
-    
-
+    this._userService.register(this.user).subscribe(res=>{
+        delete res["passwordConfirm"];
+        if(res["email"]===this.user.email){
+          this._userService.registerDatabase(this.user).subscribe(resp=>{
+            console.log(resp)
+            this.router.navigateByUrl('');
+          })
+        }
+    })
   }
+
+ 
 
 }
